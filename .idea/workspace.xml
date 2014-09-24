@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_includes/footer.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/_posts/2014-09-24-first-post.textile" afterPath="$PROJECT_DIR$/_posts/2014-09-24-first-post.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_layouts/default.html" afterPath="$PROJECT_DIR$/_layouts/default.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/sidebar.html" afterPath="$PROJECT_DIR$/_includes/sidebar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="butterandfly.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +33,7 @@
       <file leaf-file-name="default.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_layouts/default.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="0" selection-start="1026" selection-end="1026" vertical-scroll-proportion="0.8948864">
+            <state line="39" column="3" selection-start="973" selection-end="973" vertical-scroll-proportion="0.83096594">
               <folding />
             </state>
           </provider>
@@ -373,7 +369,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_layouts/default.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="0" selection-start="1026" selection-end="1026" vertical-scroll-proportion="0.8948864">
+        <state line="39" column="3" selection-start="973" selection-end="973" vertical-scroll-proportion="0.83096594">
           <folding />
         </state>
       </provider>
