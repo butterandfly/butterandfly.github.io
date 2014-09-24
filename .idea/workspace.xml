@@ -2,16 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/blog.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_includes/sidebar.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/_includes/footer.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/_posts/2014-09-24-first-post.textile" afterPath="$PROJECT_DIR$/_posts/2014-09-24-first-post.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_layouts/default.html" afterPath="$PROJECT_DIR$/_layouts/default.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/sidebar.html" afterPath="$PROJECT_DIR$/_includes/sidebar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="butterandfly.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411594598368" ignored="false" />
-    <file path="/default.html" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411595811813" ignored="false" />
+    <file path="/default.html" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411597756607" ignored="false" />
     <file path="/index.html" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411595323910" ignored="false" />
+    <file path="/2014-09-24-first-post.md" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411597692750" ignored="false" />
+    <file path="/sidebar.html" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411597646164" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +37,25 @@
       <file leaf-file-name="default.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_layouts/default.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="17" selection-start="492" selection-end="492" vertical-scroll-proportion="0.3409091">
+            <state line="42" column="0" selection-start="1026" selection-end="1026" vertical-scroll-proportion="0.8948864">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2014-09-24-first-post.md" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2014-09-24-first-post.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="3" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footer.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_includes/footer.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="6" selection-start="107" selection-end="107" vertical-scroll-proportion="-3.125">
               <folding />
             </state>
           </provider>
@@ -52,7 +73,7 @@
       <file leaf-file-name="sidebar.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_includes/sidebar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="29" selection-start="1168" selection-end="1168" vertical-scroll-proportion="-18.75">
+            <state line="4" column="7" selection-start="155" selection-end="155" vertical-scroll-proportion="-2.5">
               <folding />
             </state>
           </provider>
@@ -86,8 +107,11 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/_includes/sidebar.html" />
         <option value="$PROJECT_DIR$/css/blog.css" />
+        <option value="$PROJECT_DIR$/_posts/2014-09-24-first-post.textile" />
+        <option value="$PROJECT_DIR$/_includes/sidebar.html" />
+        <option value="$PROJECT_DIR$/_posts/2014-09-24-first-post.md" />
+        <option value="$PROJECT_DIR$/_includes/footer.html" />
         <option value="$PROJECT_DIR$/_layouts/default.html" />
       </list>
     </option>
@@ -152,6 +176,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="butterandfly.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="butterandfly.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_posts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -298,13 +336,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/_includes/sidebar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="29" selection-start="1168" selection-end="1168" vertical-scroll-proportion="-18.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/blog.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="166" column="1" selection-start="2401" selection-end="2401" vertical-scroll-proportion="0.0">
@@ -319,9 +350,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/sidebar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="7" selection-start="155" selection-end="155" vertical-scroll-proportion="-2.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2014-09-24-first-post.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="3" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="6" selection-start="107" selection-end="107" vertical-scroll-proportion="-3.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_layouts/default.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="17" selection-start="492" selection-end="492" vertical-scroll-proportion="0.3409091">
+        <state line="42" column="0" selection-start="1026" selection-end="1026" vertical-scroll-proportion="0.8948864">
           <folding />
         </state>
       </provider>
