@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/sidebar.html" afterPath="$PROJECT_DIR$/_includes/sidebar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2014-09-24-first-post.md" afterPath="$PROJECT_DIR$/_posts/2014-09-24-first-post.md" />
     </list>
     <ignored path="butterandfly.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,7 +67,7 @@
       <file leaf-file-name="2014-09-24-first-post.md" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2014-09-24-first-post.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="3" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0">
+            <state line="10" column="9" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -104,7 +103,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="31" selection-start="209" selection-end="209" vertical-scroll-proportion="0.17094018">
+            <state line="8" column="63" selection-start="241" selection-end="241" vertical-scroll-proportion="0.17094018">
               <folding />
             </state>
           </provider>
@@ -130,11 +129,11 @@
       <list>
         <option value="$PROJECT_DIR$/css/blog.css" />
         <option value="$PROJECT_DIR$/_posts/2014-09-24-first-post.textile" />
-        <option value="$PROJECT_DIR$/_posts/2014-09-24-first-post.md" />
         <option value="$PROJECT_DIR$/_includes/footer.html" />
         <option value="$PROJECT_DIR$/_layouts/default.html" />
         <option value="$PROJECT_DIR$/_includes/sidebar.html" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/_posts/2014-09-24-first-post.md" />
       </list>
     </option>
   </component>
@@ -366,13 +365,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_includes/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="6" selection-start="107" selection-end="107" vertical-scroll-proportion="-3.125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_includes/sidebar.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="8" selection-start="360" selection-end="360" vertical-scroll-proportion="-6.875">
@@ -382,7 +374,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2014-09-24-first-post.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="3" selection-start="73" selection-end="73" vertical-scroll-proportion="0.0">
+        <state line="10" column="9" selection-start="71" selection-end="71" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_includes/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="6" selection-start="107" selection-end="107" vertical-scroll-proportion="-3.125">
           <folding />
         </state>
       </provider>
@@ -396,7 +395,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="31" selection-start="209" selection-end="209" vertical-scroll-proportion="0.17094018">
+        <state line="8" column="63" selection-start="241" selection-end="241" vertical-scroll-proportion="0.17094018">
           <folding />
         </state>
       </provider>
