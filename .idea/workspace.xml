@@ -2,15 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_layouts/default.html" afterPath="$PROJECT_DIR$/_layouts/default.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_includes/sidebar.html" afterPath="$PROJECT_DIR$/_includes/sidebar.html" />
     </list>
     <ignored path="butterandfly.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411594598368" ignored="false" />
     <file path="/default.html" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411597756607" ignored="false" />
-    <file path="/index.html" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411595323910" ignored="false" />
+    <file path="/index.html" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411701049241" ignored="false" />
     <file path="/2014-09-24-first-post.md" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411597692750" ignored="false" />
-    <file path="/sidebar.html" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411597646164" ignored="false" />
+    <file path="/sidebar.html" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411611582039" ignored="false" />
+    <file path="$USER_HOME$/Working/egret_game/catch/src/Game.ts" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411609029647" ignored="false" />
+    <file path="/Game.ts" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411609641222" ignored="false" />
+    <file path="$USER_HOME$/Working/egret_game/catch/src/CatchGame.ts" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411630682578" ignored="false" />
+    <file path="$USER_HOME$/Working/egret_game/catch/egretProperties.json" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411609512090" ignored="false" />
+    <file path="$USER_HOME$/Working/egret_game/catch/libs/core/egret/layout/VerticalAlign.js" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411609604298" ignored="false" />
+    <file path="$USER_HOME$/Working/egret_game/catch/libs/core/core.d.ts" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411609604298" ignored="false" />
+    <file path="$USER_HOME$/Working/egret_game/catch/libs/core/egret/utils/Injector.js" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411609604298" ignored="false" />
+    <file path="$USER_HOME$/Working/egret_game/catch/libs/core/extension/resource/Resource.js" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411609604298" ignored="false" />
+    <file path="$USER_HOME$/Working/egret_game/catch/src/LoadingUI.ts" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411612084912" ignored="false" />
+    <file path="/LoadingUI.ts" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411609818792" ignored="false" />
+    <file path="/CatchGame.ts" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411630677306" ignored="false" />
+    <file path="$USER_HOME$/Working/egret_game/catch/src/Rect.ts" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411629550598" ignored="false" />
+    <file path="/Rect.ts" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411629522167" ignored="false" />
+    <file path="$USER_HOME$/Working/egret_game/catch/launcher/release.html" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411637764478" ignored="false" />
+    <file path="$USER_HOME$/Working/egret_game/catch/launcher/index.html" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411637764478" ignored="false" />
+    <file path="$USER_HOME$/Working/egret_game/catch/resource/resource.json" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411637734334" ignored="false" />
+    <file path="/resource.json" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411616619559" ignored="false" />
+    <file path="$USER_HOME$/Working/egret_game/catch/src/StreetMap.ts" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411637753036" ignored="false" />
+    <file path="/StreetMap.ts" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411637557862" ignored="false" />
+    <file path="$USER_HOME$/Working/egret_game/catch/launcher/native_loader.js" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411637764478" ignored="false" />
+    <file path="$USER_HOME$/Working/egret_game/catch/bin-debug/src/CatchGame.js" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411637748093" ignored="false" />
+    <file path="$USER_HOME$/Working/egret_game/catch/bin-debug/src/StreetMap.js" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411637764478" ignored="false" />
+    <file path="$USER_HOME$/Working/egret_game/catch/bin-debug/src/Rect.js" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411637764478" ignored="false" />
+    <file path="$USER_HOME$/Working/egret_game/catch/src/Man.ts" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411637593000" ignored="false" />
+    <file path="/Man.ts" changelist="0d2a64fe-9013-4fbc-98a7-88e714a1c8c3" time="1411637591362" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,10 +56,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="default.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="default.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_layouts/default.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="3" selection-start="973" selection-end="973" vertical-scroll-proportion="0.83096594">
+            <state line="37" column="9" selection-start="931" selection-end="931" vertical-scroll-proportion="-16.25">
               <folding />
             </state>
           </provider>
@@ -69,16 +95,16 @@
       <file leaf-file-name="sidebar.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_includes/sidebar.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="7" selection-start="155" selection-end="155" vertical-scroll-proportion="-2.5">
+            <state line="11" column="8" selection-start="360" selection-end="360" vertical-scroll-proportion="-6.875">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="21" selection-start="326" selection-end="326" vertical-scroll-proportion="-8.125">
+            <state line="8" column="31" selection-start="209" selection-end="209" vertical-scroll-proportion="0.17094018">
               <folding />
             </state>
           </provider>
@@ -102,18 +128,19 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/blog.css" />
         <option value="$PROJECT_DIR$/_posts/2014-09-24-first-post.textile" />
-        <option value="$PROJECT_DIR$/_includes/sidebar.html" />
         <option value="$PROJECT_DIR$/_posts/2014-09-24-first-post.md" />
         <option value="$PROJECT_DIR$/_includes/footer.html" />
         <option value="$PROJECT_DIR$/_layouts/default.html" />
+        <option value="$PROJECT_DIR$/_includes/sidebar.html" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="22" />
+    <option name="x" value="-255" />
+    <option name="y" value="-878" />
     <option name="width" value="1440" />
     <option name="height" value="874" />
   </component>
@@ -250,7 +277,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="874" extended-state="6" />
+    <frame x="-255" y="-878" width="1440" height="874" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -339,16 +366,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/_includes/footer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="21" selection-start="326" selection-end="326" vertical-scroll-proportion="-8.125">
+        <state line="5" column="6" selection-start="107" selection-end="107" vertical-scroll-proportion="-3.125">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_includes/sidebar.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="7" selection-start="155" selection-end="155" vertical-scroll-proportion="-2.5">
+        <state line="11" column="8" selection-start="360" selection-end="360" vertical-scroll-proportion="-6.875">
           <folding />
         </state>
       </provider>
@@ -360,16 +387,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_includes/footer.html">
+    <entry file="file://$PROJECT_DIR$/_layouts/default.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="6" selection-start="107" selection-end="107" vertical-scroll-proportion="-3.125">
+        <state line="37" column="9" selection-start="931" selection-end="931" vertical-scroll-proportion="-16.25">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_layouts/default.html">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="3" selection-start="973" selection-end="973" vertical-scroll-proportion="0.83096594">
+        <state line="8" column="31" selection-start="209" selection-end="209" vertical-scroll-proportion="0.17094018">
           <folding />
         </state>
       </provider>
