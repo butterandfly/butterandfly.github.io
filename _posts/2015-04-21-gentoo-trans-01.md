@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: article
 title: USE标记（翻译）
 ---
 
@@ -7,9 +7,9 @@ title: USE标记（翻译）
 原文：https://wiki.gentoo.org/wiki/Handbook:X86/Working/USE
 ```
 
-# 什么是USE标记
+## 什么是USE标记
 
-## USE标记的理念
+### USE标记的理念
 
 当安装gentoo（或其他linux发行版，甚至其他操作系统）时，用户会根据不同的工作环境而做出不同的选择。一个服务器的设置不同与工作站。一个游戏工作站的设置也不同与3d渲染的工作站。
 
@@ -17,7 +17,7 @@ title: USE标记（翻译）
 
 为了帮助用户决定什么是需要安装/激活的，Gentoo希望通过一个简单的方式让用户指定他的环境。这会迫使用户决定他们真正需要的，同时减轻portage的负担。
 
-## 一个USE标记的定义
+### 一个USE标记的定义
 
 输入一个USE标记。这标记是一个能体现当前情景的支持与依赖信息的关键字。如果定义了一个当前USE标记，portage会知道用户希望该USE标记能得到支持。当然这也改变了包的依赖信息。
 
@@ -25,11 +25,11 @@ title: USE标记（翻译）
 
 正确地定义关键字，来为用户明确地定制系统。
 
-## 有哪些USE标记（补）
+### 有哪些USE标记（补）
 
-# 使用USE标记
+## 使用USE标记
 
-## 声明永久的USE标记
+### 声明永久的USE标记
 
 如上文提到的，所有USE标记都声明在USE变量内。为了让用户更方便地查找和选择USE标记，我们已经提供了默认的USE设置。该设置包含了所有我们认为对一般用户会有用的USE标记。这个默认设置作为profile的一部分声明在了“make.defaults”文件内。
 
@@ -52,7 +52,7 @@ USE="a52 aac acpi alsa branding cairo cdr dbus dts ..."
 USE="-kde -qt4 ldap"
 ```
 
-## 为单独的包声明USE标记
+### 为单独的包声明USE标记
 
 有时候用户希望声明一个作用于一个（或一些）应用程序的临时USE标记，但非作用于整个系统。此时你可以修改“/etc/portage/package.use”来达到这目的。这通常是一个单独的文件，但也可以是一个目录；查看`man portage`的到更多的信息。下面这例子假设package.use是一个文件。
 
@@ -68,7 +68,7 @@ dev-db/mysql berkdb
 dev-php/php -java
 ```
 
-## 声明临时的USE标记
+### 声明临时的USE标记
 
 有时候用户需要为一个极短的时间段设置USE标记。声明USE变量作为环境变量，这样可以避免对“/etc/portage/make.conf”做两次修改（修改及取消修改）。记住这种设置只应用在命令的入口——从新安装或更新应用（无论是明确地，或作为系统更新的一部分）会取消由USE标记（临时）的定义而触发的修改。
 
@@ -78,4 +78,4 @@ dev-php/php -java
 root #USE="-java" emerge seamonkey
 ```
 
-## 优先级
+### 优先级

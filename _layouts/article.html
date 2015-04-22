@@ -1,0 +1,27 @@
+{% include header.html %}
+<body>
+
+{% include nav.html %}
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-8 blog-main">
+      <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
+      {{ content }}
+    </div><!-- /.blog-main -->
+
+    {% include sidebar.html %}
+  </div><!-- /.row -->
+</div><!-- /.container -->
+
+{% include footer.html %}
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>-->
+<!--<script src="/js/bootstrap.min.js"></script>-->
+<!--<script src="../../assets/js/docs.min.js"></script>-->
+</body>
+</html>
