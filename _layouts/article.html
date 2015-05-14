@@ -9,7 +9,9 @@
     <div class="col-sm-8 blog-main">
       <h1><a href="{{ page.url }}">{{ page.title }}</a></h1>
       {{ content }}
+      {% include disqus.html %}
     </div><!-- /.blog-main -->
+
 
     {% include sidebar.html %}
   </div><!-- /.row -->
