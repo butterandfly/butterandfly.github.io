@@ -9,6 +9,7 @@ httpie是一个命令行的http客户端。与经典的curl、wget一样，但�
 
 ## 特性
 按照readme的说法，httpie吸引人的地方在于：
+
 * 简洁的语法（原文是Expressive and intuitive syntax，有表达力的、符合人类直觉的语法）
 * 输出内容经过格式化及上色（简单来说就是人类友好）
 * 内置的JSON支持
@@ -31,6 +32,7 @@ readme里面有非常完整的文档，在此我不一一细述；下面我详�
 
 ### 人类友好
 readme的开头有一个对比图片，分别是使用curl和httpie的例子。从两个图片我们很容易地看出：
+
 * http需要的参数非常简洁
 * 输出结果不再是黑白电影
 
@@ -81,6 +83,7 @@ $ http --verify=no https://example.org
 
 ### 定制输出内容
 httpie可以指定输出内容：
+
 * `-h`或`--headers`，只输出response的headers
 * `-b`或`—body`，只输出response的body
 * `-v`或`—verbose`，同时输出request和response的全部内容
