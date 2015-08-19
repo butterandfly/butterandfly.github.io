@@ -85,20 +85,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
   <template>
     <iron-ajax auto url="../../data/articleList.json" last-response="{{articles}}"></iron-ajax>
     <div>
-      <!--<paper-menu  class="list" selected="0">-->
-      <!--<paper-menu id="paper-menu">-->
         <template is="dom-repeat" items="{{articles}}">
-          <!--<a id="article-anchor" href$="{{getArticleUrl(item.urlTitle)}}">-->
-          <paper-item data-url-title="{{getArticleUrl(item.urlTitle)}}">
-            <a href$="{{getArticleUrl(item.urlTitle)}}">
-            <!--<a id="article-anchor" data-utl-title="{{getArticleUrl(item.urlTitle)}}">-->
+          <paper-item>
+            <a href$="{{getArticleUrl(item.fileName)}}">
               <span class="title" flex>{{item.title}}</span>
               <span class="create-date">{{item.createDate}}</span>
             </a>
           </paper-item>
-      </a>
         </template>
-      <!--</paper-menu>-->
     </div>
   </template>
 </dom-module>
@@ -116,15 +110,8 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         notify: true
       }
     },
-    selectArticle: function() {
-//      var url = this.$['paper-menu'].focusedItem;
-      return;
-
-//      var url = '/article/' + e.currentTarget.getAttribute('url-title');
-//      page(url);
-    },
-    getArticleUrl: function(urlTitle) {
-      return '/article/' + urlTitle;
+    getArticleUrl: function(fileName) {
+      return '/article/' + fileName;
     }
   });
 })();
