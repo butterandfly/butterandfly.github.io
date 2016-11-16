@@ -1,0 +1,102 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/marked-element/marked-element.html">
+
+<dom-module id="pl-desc-dialog">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      paper-dialog {
+        overflow: auto;
+      }
+
+      #container {
+        width: 800px;
+        padding: 0 16px;
+      }
+
+      #btns {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .markdown-html pre {
+        background-color: rgba(255, 248, 196, 0.29);
+        padding: 8px;
+        border-radius: 5px;
+      }
+
+      .markdown-html blockquote {
+        border-left: 2px solid #deb72a;
+        margin-left: 16px;
+        padding: 2px 16px;
+      }
+
+    </style>
+
+    <iron-ajax
+      auto
+      id="ajax"
+      url="{{mdFile}}"
+      handle-as="text"
+      last-response="{{_mdFileContent}}"></iron-ajax>
+
+    <paper-dialog with-backdrop opened="{{opened}}">
+      <marked-element markdown="[[_mdFileContent]]">
+        <div id="container" class="markdown-html"></div>
+      </marked-element>
+
+      <div id="btns">
+        <paper-button on-tap="close">确定</paper-button>
+      </div>
+    </paper-dialog>
+  </template>
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'pl-desc-dialog',
+
+        properties: {
+          opened: {
+            type: Boolean,
+            notify: true
+          },
+
+          _mdFileContent: {
+            type: String
+          },
+
+          /**
+           * 当前选择的level。
+           */
+          currentLevel: {
+            type: String,
+            notify: true,
+            observer: '_observeCurrentLevel'
+          }
+        },
+
+        open() {
+          this.opened = true;
+        },
+
+        close() {
+          this.opened = false;
+        },
+
+        // 检测currentLevel的改变
+        _observeCurrentLevel(level) {
+          this.$.ajax.url = `/levels/${level}/${level}.md`;
+        }
+      });
+    })();
+  </script>
+</dom-module>

@@ -1,0 +1,57 @@
+<link href="/bower_components/polymer/polymer.html" rel="import">
+
+<!-- 这是star-bar的定义内容，可以先忽略 -->
+<dom-module id="star-bar">
+  <template>
+    <style>
+      :host {
+        display: block;
+        width: 320px;
+        height: 400px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+      }
+
+      #header {
+        height: 48px;
+        background-color: #d80684;
+        padding-left: 16px;
+      }
+
+      #header span {
+        line-height: 48px;
+        font-size: 24px;
+        color: white;
+      }
+
+      #content {
+        padding: 16px 8px;
+      }
+    </style>
+
+    <div id="header">
+      <span>[[appName]]</span>
+    </div>
+    <div id="content">[[welcomeWords]]</div>
+  </template>
+  <script>
+    Polymer({
+      is: 'star-bar',
+
+      properties: {
+        appName: {
+          type: String,
+          value: 'Star Bar'
+        },
+
+        // TODO: 声明welcomeWords，String类型，默认值为'Welcome to Star Bar!'
+        welcomeWords: {
+          type: String,
+          value: 'Welcome to Star Bar!'
+        }
+      }
+    });
+  </script>
+</dom-module>
+
+<star-bar></star-bar>

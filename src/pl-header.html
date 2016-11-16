@@ -1,0 +1,95 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-button/paper-button.html">
+
+<dom-module id="pl-header">
+  <template>
+    <style>
+      :host {
+        width: 100vw;
+        height: 48px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        background: white;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0px 1px 5px 0px #ccc;
+      }
+
+      .product {
+        font-size: 24px;
+        color: #777;
+        padding-left: 16px;
+        padding-right: 32px;
+      }
+
+      #level {
+        position: absolute;
+        right: 48px;
+      }
+
+      #currentLevel {
+        color: #3c78f3;
+      }
+
+      #username {
+        font-style: italic;
+      }
+    </style>
+
+    <span class="product">Polylearn</span>
+    <paper-button on-tap="_runTest">运行测试</paper-button>
+    <paper-button on-tap="_runView">预览</paper-button>
+    <paper-button on-tap="_reset">重置</paper-button>
+    <paper-button on-tap="_watchDesc">查看关卡说明</paper-button>
+    <paper-button on-tap="_changeLevel">选择关卡</paper-button>
+    <div id="level"><span id="username">[[username]]</span>，当前等级： <span id="currentLevel">[[currentLevel]]</span></div>
+
+  </template>
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'pl-header',
+
+        properties: {
+          /**
+           * 当前选择的level。
+           */
+          currentLevel: {
+            type: String
+          },
+
+          /**
+           * 用户名。
+           */
+          username: {
+            type: String
+          }
+        },
+
+        _runTest() {
+          this.fire('tap-run-test', null, {bubbles: false});
+        },
+
+        _runView() {
+          this.fire('tap-run-view', null, {bubbles: false});
+        },
+
+        _reset() {
+          this.fire('tap-reset', null, {bubbles: false});
+        },
+
+        _watchDesc() {
+          this.fire('tap-watch-desc', null, {bubbles: false});
+        },
+
+        _changeLevel() {
+          this.fire('tap-change-level', null, {bubbles: false});
+        }
+      });
+    })();
+  </script>
+</dom-module>

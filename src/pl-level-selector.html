@@ -1,0 +1,181 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/paper-toast/paper-toast.html">
+
+<dom-module id="pl-level-selector">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      #title {
+        height: 48px;
+        font-size: 24px;
+        background-color: #777;
+        color: white;
+        padding-left: 16px;
+        line-height: 48px;
+      }
+
+      paper-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 4px;
+        cursor: pointer;
+      }
+
+      .level {
+        font-size: 18px;
+      }
+
+      .level-desc {
+        font-size: 12px;
+        color: #444;
+      }
+
+      .lock {
+        position: absolute;
+        right: 8px;
+        top: 8px;
+        color: #666;
+        width: 20px;
+      }
+
+      iron-icon[hidden] {
+        display: none;
+      }
+    </style>
+
+    <div id="title">关卡选择</div>
+    <paper-listbox attr-for-selected="level" selected="{{selectedLevel}}">
+      <template is="dom-repeat" items="[[levels]]">
+        <paper-item on-tap="_ask" level="[[item.level]]">
+          <div class="level">[[item.level]]</div>
+          <span class="level-desc">[[item.desc]]</span>
+          <iron-icon hidden$="[[item.unlocked]]" class="lock" icon="lock"></iron-icon>
+        </paper-item>
+      </template>
+    </paper-listbox>
+    <paper-toast duration="2000" id="toast" text="该关卡未解锁"></paper-toast>
+  </template>
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'pl-level-selector',
+
+        properties: {
+          levels: {
+            type: Array,
+            value: [
+              {level: 'level01', desc: '学习使用自定义元素'},
+              {level: 'level02', desc: '修改自定义元素的html模板'},
+              {level: 'level03', desc: '使用单向绑定'},
+              {level: 'level04', desc: '声明property'},
+              {level: 'level05', desc: '使用更多的自定义元素'}
+            ]
+          },
+
+          selectedLevel: {
+            type: String,
+            notify: true
+          }
+        },
+
+        /**
+         * 初始化解锁状态，将已经到达的level及之前都设置为unlocked状态
+         * @param {Number} level 到达的level
+         */
+        initUnlocks(level) {
+          // 将level转换成number
+          let levelNum = Number(level.substring(5));
+
+          // 克隆levels
+          let newLevels = JSON.parse(JSON.stringify(this.levels));
+
+          // number之前的level的unlocked都设置为true
+          for (let i = 0; i < levelNum; i++) {
+            newLevels[i].unlocked = true;
+          }
+
+          this.levels = newLevels;
+        },
+
+        /**
+         * 得到level对象。
+         * @param {Object} level level字符串，如'level01'
+         * @return {Object} level对象
+         */
+        getLevelObject(level) {
+          return this.levels[Number(level.substring(5)) - 1];
+        },
+
+        /**
+         * 解锁一下个level。
+         * @param {String} currentLevel 当前level
+         */
+        unlockNextLevel(currentLevel) {
+          let levelNum = Number(currentLevel.substring(5));
+          this.set(['levels', levelNum, 'unlocked'], true);
+        },
+
+        /**
+         * 解锁所有的level。
+         */
+        unlockAll() {
+          let newLevels = this._cloneLevels();
+          newLevels.forEach(level => {
+            level.unlocked = true;
+          });
+          this.levels = newLevels;
+        },
+
+        /**
+         * 进入下一level，若已经在最后一个level，则不执行任何操作。
+         */
+        nextLevel() {
+          if (this.atLastLevel()) {
+            return;
+          }
+
+          let nextLevelIndex = Number(this.selectedLevel.substring(5));
+          this.selectedLevel = this.levels[nextLevelIndex].level;
+        },
+
+        /**
+         * 是否在最后一个level。
+         * @return {Boolean} 是否在最后一个level
+         */
+        atLastLevel() {
+          let levelObj = this.getLevelObject(this.selectedLevel);
+          if (levelObj === this.levels[this.levels.length - 1]) {
+            return true;
+          }
+
+          return false;
+        },
+
+        // 返回克隆的levels数组
+        _cloneLevels() {
+          let newLevels = JSON.parse(JSON.stringify(this.levels));
+          return newLevels;
+        },
+
+        _ask(event) {
+          let level = event.currentTarget.level;
+          // 未解锁时提示
+          if (!this.getLevelObject(level).unlocked) {
+            // 阻止冒泡，使得选择不会改变
+            event.stopPropagation();
+            this.$.toast.open();
+          }
+        }
+      });
+    })();
+  </script>
+</dom-module>

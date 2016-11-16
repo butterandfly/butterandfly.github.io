@@ -1,0 +1,198 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-dialog/paper-dialog.html">
+<link rel="import" href="../paper-button/paper-button.html">
+
+<!--
+"tk-confirm-dialog"是一个Material Design的确认弹窗。
+弹窗内容只包含标题、内容、取消及确认按钮。当然这些文字都是可设置的。
+
+```html
+<tk-confirm-dialog title="你想要设置的标题"
+                   content="你想要设置的内容"
+                   close-by-cancel>
+</tk-confirm-dialog>
+<script>
+  document.querySelector('tk-confirm-dialog').open();
+</script>
+```
+
+### Important
+因为paper-dialog的遮罩（backdrop）有问题，故该组件暂时不提供遮罩功能；但会在后续版本里跟进。
+
+@demo demo/index.html
+-->
+
+<dom-module id="tk-confirm-dialog">
+  <template>
+    <style>
+      :host {
+        font-family: Verdana;
+      }
+
+      h2{
+        line-height: 20px;
+      }
+
+      p {
+        margin-top: 20px;
+        margin-bottom: 24px
+      }
+
+      #modal {
+        min-width: 320px;
+      }
+
+      #buttonWrap {
+        display: flex;
+        height: 32px;
+        width: auto;
+        justify-content: flex-end;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        padding:8px 8px 8px 0;
+      }
+
+      .dialogButton {
+        line-height: 15px;
+        padding: 0 16px;
+        color: #1976d2;
+      }
+
+      #cancel {
+        margin-right: 8px;
+        margin-left: 0;
+      }
+
+      #confirm {
+        margin-right: 0;
+        margin-left: 0;
+      }
+    </style>
+
+    <paper-dialog opened="{{opened}}" id="modal">
+      <div id="titleContent">
+        <h2>{{title}}</h2>
+        <p>{{content}}</p>
+      </div>
+      <div id="buttonWrap">
+        <paper-button class="dialogButton"
+                      id="cancel"
+                      hidden$=[[confirmOnly]]
+                      on-tap='_confirmDialogCancel'>[[cancelText]]</paper-button>
+        <paper-button class="dialogButton" id="confirm" on-tap='_confirmDialogConfirm'>[[confirmText]]</paper-button>
+      </div>
+    </paper-dialog>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'tk-confirm-dialog',
+      properties: {
+        /**
+         * 弹窗标题。
+         */
+        title: {
+          type: String,
+          value: 'Title'
+        },
+
+        /**
+         * 弹窗内容。
+         */
+        content: {
+          type: String,
+          value: ''
+        },
+
+        /**
+         * 默认为false，当设置为true时，dialog窗口弹出。
+         */
+        opened: {
+          type: Boolean,
+          value: false,
+          notify: true
+        },
+
+        /**
+         * 确定按钮的文字。
+         */
+        confirmText: {
+          type: String,
+          value: 'Ok'
+        },
+
+        /**
+         * 取消按钮的文字。
+         */
+        cancelText: {
+          type: String,
+          value: 'Cancel'
+        },
+
+        /**
+         * cancel后是否自动关闭弹窗。
+         */
+        closeByCancel: {
+          type: Boolean,
+          value: false
+        },
+
+        /**
+         * confirm后是否自动关闭弹窗。
+         */
+        closeByConfirm: {
+          type: Boolean,
+          value: false
+        },
+
+        /**
+         * 是否只有confirm按钮。
+         */
+        confirmOnly: {
+          type: Boolean,
+          value: false
+        }
+      },
+
+      /**
+       * 点击取消按钮时，触发该事件
+       * @event tk-confirm-dialog-cancel
+       */
+
+      /**
+       * 点击确认按钮时，触发该事件
+       * @event tk-confirm-dialog-confirm
+       */
+
+      /**
+       * 打开弹窗。
+       */
+      open: function() {
+        this.opened = true;
+      },
+
+      /**
+       * 关闭弹窗。
+       */
+      close: function() {
+        this.opened = false;
+      },
+
+      _confirmDialogCancel: function() {
+        if (this.closeByCancel) {
+          this.close();
+        }
+
+        this.fire('tk-confirm-dialog-cancel', null, {bubble: false});
+      },
+
+      _confirmDialogConfirm: function() {
+        if (this.closeByConfirm) {
+          this.close();
+        }
+
+        this.fire('tk-confirm-dialog-confirm', null, {bubble: false});
+      }
+    });
+  </script>
+</dom-module>

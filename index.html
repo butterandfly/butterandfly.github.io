@@ -1,1 +1,51 @@
-<!doctype html><html lang=""><head><meta charset="utf-8"><meta name="description" content=""><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Polymer Starter Kit"><title>Butter and Fly</title><meta name="theme-color" content="#303F9F"><link rel="manifest" href="manifest.json"><meta name="msapplication-TileColor" content="#3372DF"><meta name="mobile-web-app-capable" content="yes"><meta name="application-name" content="Polymer Starter Kit"><link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="apple-mobile-web-app-title" content="Polymer Starter Kit"><link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png"><meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png"><link rel="stylesheet" href="styles/main.css"><script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script><link rel="import" href="elements/elements.vulcanized.html"></head><body unresolved="" class="fullbleed layout vertical"><span id="browser-sync-binding"></span><div class="hide" id="oops"><img src="images/oops.jpg" alt="Oops"><h1>Damn！你的浏览器太旧了。</h1><p>请使用较新的Chrome、Safari、Firefox等现代浏览器。</p></div><blog-app id="blog-app"></blog-app><script src="scripts/app.js"></script></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Polylearn</title>
+    <style media="screen">
+      body {
+        height: 100vh;
+        margin: 0;
+      }
+    </style>
+    <script>
+      // setup Polymer options
+      window.Polymer = {lazyRegister: true, dom: 'shadow'};
+
+      // load webcomponents polyfills
+      (function() {
+        if ('registerElement' in document &&
+          'import' in document.createElement('link') &&
+          'content' in document.createElement('template')) {
+          // browser has web components
+        } else {
+          // polyfill web components
+          let e = document.createElement('script');
+          e.src = '/bower_components/webcomponentsjs/webcomponents-lite.min.js';
+          document.head.appendChild(e);
+        }
+      })();
+    </script>
+    <!-- <script src="ace.js"></script> -->
+    <link rel="import" href="src/pl-app.html">
+    <!-- <link rel="import" href="src/pl-editor.html"> -->
+  </head>
+  <body>
+    <pl-app>
+    </pl-app>
+    <script>
+    // 注册Service Worker
+    // if ('serviceWorker' in navigator) {
+    //   navigator.serviceWorker.register('/sw.js', {scope: '/'})
+    //     .then(function(registration) {
+    //       console.log('Service Worker Registered');
+    //     });
+    //
+    //   navigator.serviceWorker.ready.then(function(registration) {
+    //     console.log('Service Worker Ready');
+    //   });
+    // }
+    </script>
+  </body>
+</html>

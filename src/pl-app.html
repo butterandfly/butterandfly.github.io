@@ -1,0 +1,218 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+
+<link rel="import" href="../bower_components/tk-confirm-dialog/tk-confirm-dialog.html">
+
+<link rel="import" href="./pl-header.html">
+<link rel="import" href="./pl-editor.html">
+<link rel="import" href="./pl-desc-dialog.html">
+<link rel="import" href="./pl-level-selector.html">
+<script src="./polylearn.js">
+</script>
+
+<dom-module id="pl-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+        height: 100vh;
+        width: 100vw;
+      }
+
+      #container {
+        height: calc(100vh - 54px);
+        display: flex;
+        justify-content: space-around;;
+      }
+
+      pl-editor {
+        flex: 1;
+        height: calc(100vh - 48px);
+      }
+
+      #resultWindowContainer {
+        flex: 1;
+        border-left: 1px solid #aaa;
+        position: relative;
+      }
+
+      #resultWindowContainer iframe {
+        border: 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      #testWindow {
+        0px 2px 1px 0px #ccc;
+        overflow: auto;
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 50%;
+        z-index: 1;
+      }
+
+      app-drawer {
+        z-index: 9;
+      }
+    </style>
+
+
+    <pl-header on-tap-run-view="runView"
+               on-tap-watch-desc="watchDesc"
+               on-tap-reset="resetEditor"
+               on-tap-run-test="runTest"
+               on-tap-change-level="_toggleDrawer"
+               username="[[user.username]]"
+               current-level="[[currentLevel]]"></pl-header>
+
+     <div id="container">
+       <pl-editor id="plEditor" current-level="[[currentLevel]]"></pl-editor>
+       <div id="resultWindowContainer"></div>
+     </div>
+
+    <pl-desc-dialog id="descDialog" current-level="[[currentLevel]]"></pl-desc-dialog>
+
+     <app-drawer id="drawer" swipe-open>
+       <pl-level-selector id="levelSelector" selected-level="{{currentLevel}}" on-selected-level-changed="_changeLevel">
+       </pl-level-selector>
+     </app-drawer>
+
+    <tk-confirm-dialog id="testSuccessDialog"
+                       title="测试通过"
+                       content="你可以进入下一关卡！"
+                       cancel-text="返回"
+                       confirm-text="下一关"
+                       on-tk-confirm-dialog-confirm="nextLevel"
+                       close-by-cancel
+                       close-by-confirm>
+    </tk-confirm-dialog>
+  </template>
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'pl-app',
+
+        properties: {
+
+          /**
+           * 当前选择的level。
+           */
+          currentLevel: {
+            type: String,
+            value: 'level01',
+            notify: true
+          },
+
+          /**
+           * 用户
+           */
+          user: {
+            type: Object
+          }
+        },
+
+        attached() {
+          window.addEventListener('message', event => {
+            if (event.data === 'test-success') {
+              this._testSuccess();
+              this.$.levelSelector.unlockNextLevel(this.currentLevel);
+            }
+          });
+
+          window.polylearnUser = {
+            username: '游客',
+            unlockedLevel: 'level01'
+          };
+          let user = window.polylearnUser;
+          // 随机生成游客编号
+          user.username += Math.floor(Math.random() * 9000 + 1000);
+
+          this.$.levelSelector.initUnlocks(user.unlockedLevel);
+          this.user = user;
+
+          // window.unlockAllLevels = () => {
+          //   this.$.levelSelector.unlockAll();
+          // };
+          this.$.levelSelector.unlockAll();
+        },
+
+        /**
+         * 得到iframe。
+         */
+        get iframe() {
+          return this.$$('iframe');
+        },
+
+        /**
+         * 运行测试。
+         */
+        runTest() {
+          let html = this.$.plEditor.getEditorValue();
+          let iframe = window.Polylearn.createTestIframe(html, this.currentLevel);
+          this._reloadIFrame(iframe);
+        },
+
+        /**
+         * 运行预览。
+         */
+        runView() {
+          let html = this.$.plEditor.getEditorValue();
+          let iframe = window.Polylearn.createPreviewIframe(html);
+          this._reloadIFrame(iframe);
+        },
+
+        /**
+         * 查看关卡说明。
+         */
+        watchDesc() {
+          this.$.descDialog.open();
+        },
+
+        /**
+         * 进入下一关卡。
+         */
+        nextLevel() {
+          this.$.levelSelector.nextLevel();
+        },
+
+        // 测试通过
+        _testSuccess() {
+          this.$.testSuccessDialog.open();
+        },
+
+        // 重新加载iframe
+        _reloadIFrame(iframe) {
+          this._cleanIFrame();
+          Polymer.dom(this.$.resultWindowContainer).appendChild(iframe);
+        },
+
+        // 删除iframe
+        _cleanIFrame() {
+          if (this.iframe) {
+            Polymer.dom(this.$.resultWindowContainer).removeChild(this.iframe);
+          }
+        },
+
+        /**
+         * 重置编辑器。
+         */
+        resetEditor() {
+          this.$.plEditor.reset();
+        },
+
+        _toggleDrawer() {
+          this.$.drawer.toggle();
+        },
+
+        _changeLevel() {
+          this.$.drawer.close();
+          this._cleanIFrame();
+        }
+      });
+    })();
+  </script>
+</dom-module>

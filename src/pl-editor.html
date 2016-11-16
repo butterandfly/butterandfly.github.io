@@ -1,0 +1,79 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+
+<link rel="import" href="../bower_components/juicy-ace-editor/juicy-ace-editor.html">
+
+<dom-module id="pl-editor">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      #polylearnEditor {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+
+    <iron-ajax
+      id="ajax"
+      auto
+      handle-as="text"
+      on-response="reset">
+    </iron-ajax>
+
+    <juicy-ace-editor theme="ace/theme/tomorrow" mode="ace/mode/html" id="polylearnEditor"></juicy-ace-editor>
+  </template>
+  <script>
+    (function() {
+      'use strict';
+
+      Polymer({
+        is: 'pl-editor',
+
+        properties: {
+          editor: {
+            type: Object,
+            notify: true
+          },
+
+          currentLevel: {
+            type: String,
+            notify: true
+          }
+        },
+
+        observers: [
+          '_loadEditorContent(currentLevel, editor)'
+        ],
+
+        attached() {
+          this.editor = this.$.polylearnEditor.editor;
+          this.editor.$blockScrolling = Infinity;
+        },
+
+        setEditorValue(val) {
+          this.editor.setValue(val, 1);
+        },
+
+        getEditorValue() {
+          return this.editor.getValue();
+        },
+
+        reset() {
+          this.setEditorValue(this.$.ajax.lastResponse);
+        },
+
+        _loadEditorContent(currentLevel, editor) {
+          if (!editor) {
+            return;
+          }
+
+          this.$.ajax.url = `/levels/${currentLevel}/${currentLevel}.html`;
+        }
+
+      });
+    })();
+  </script>
+</dom-module>

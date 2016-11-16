@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <title>Test pl-level-selector</title>
+
+    <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../bower_components/web-component-tester/browser.js"></script>
+
+    <link rel="import" href="./pl-level-selector.html">
+
+  </head>
+  <body>
+
+  <test-fixture id="basic">
+    <template>
+      <pl-level-selector></pl-level-selector>
+    </template>
+  </test-fixture>
+
+  <script>
+    suite('pl-level-selector tests', function() {
+      let el;
+
+      setup(function() {
+        el = fixture('basic');
+
+        el.levels = [
+          {level: 'level01'},
+          {level: 'level02'},
+          {level: 'level03'}
+        ];
+      });
+
+      test('"atLastLevel" tells if at the last level', function() {
+        el.selectedLevel = 'level01';
+        assert.notOk(el.atLastLevel());
+
+        el.selectedLevel = 'level02';
+        assert.notOk(el.atLastLevel());
+
+        el.selectedLevel = 'level03';
+        assert.ok(el.atLastLevel());
+      });
+
+      test('"nextLevel" change the "selectedLevel"', () => {
+        el.selectedLevel = 'level01';
+        el.nextLevel();
+        assert.equal(el.selectedLevel, 'level02');
+
+        el.selectedLevel = 'level03';
+        el.nextLevel();
+        assert.equal(el.selectedLevel, 'level03');
+      });
+    });
+  </script>
+
+  </body>
+</html>
